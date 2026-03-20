@@ -9,8 +9,8 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: black; /* Fondo negro como en la imagen */
-            overflow: hidden; /* Evita barras de desplazamiento */
+            background-color: black; 
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,7 +19,6 @@
             font-family: sans-serif;
         }
 
-       
         canvas {
             display: block;
         }
@@ -153,7 +152,7 @@
             requestAnimationFrame(animar);
         }
 
-        // --- INTERACCIÓN (MOUSE Y TOQUE) ---
+        
         function obtenerPosicion(e) {
             if (e.touches && e.touches.length > 0) {
                 mouseX = e.touches[0].clientX;
@@ -164,17 +163,17 @@
             }
         }
 
-        // Eventos de Mouse
+       
         window.addEventListener('mousedown', (e) => { estaTocando = true; obtenerPosicion(e); pMouseX = mouseX; pMouseY = mouseY; });
         window.addEventListener('mousemove', (e) => { obtenerPosicion(e); });
         window.addEventListener('mouseup', () => { estaTocando = false; });
 
-        // Eventos de Toque (para celulares)
+       
         window.addEventListener('touchstart', (e) => { estaTocando = true; obtenerPosicion(e); pMouseX = mouseX; pMouseY = mouseY; e.preventDefault(); }, { passive: false });
         window.addEventListener('touchmove', (e) => { obtenerPosicion(e); e.preventDefault(); }, { passive: false });
         window.addEventListener('touchend', () => { estaTocando = false; });
 
-        // Iniciar la animación
+        
         animar();
 
     </script>
